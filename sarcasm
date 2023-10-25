@@ -1,18 +1,6 @@
 import random
 import tkinter as tk
 
-#GUI
-
-window = tk.Tk()
-window.title("Sarcasm Generator")
-
-text_box = tk.Entry(window)
-text_box.pack(pady=10)
-
-text_box.pack(anchor='center')
-
-window.mainloop()
-
 #Scripting
 
 def sarcasm(text):
@@ -27,7 +15,34 @@ def sarcasm(text):
 
     return text
 
-text = input("What would you like to capitalize?: \n")
+def on_click():
+    input_text = text_box.get()
+    return input_text
 
-output = sarcasm(text)
+#GUI
 
+window = tk.Tk()
+window.title("Sarcasm Generator")
+
+title_label = tk.Label(window, text="Sarcasm Generator", font=("ComicSans",36))
+title_label.pack(padx=10,pady=10)
+
+#Create a container that will hold the 
+container = tk.Frame(window)
+container.pack(padx=10, pady=20)
+
+#Add entry widget
+text_box = tk.Entry(container)
+text_box.config(width=50)
+text_box.pack(padx=20,pady=20,side="left")
+
+#Create a "generate" button
+generate_button = tk.Button(container, text="Generate Sarcasm", command=)
+generate_button.pack(side="right",padx=10)  # Add padding to separate it from the entry
+
+answer = tk.Text(window, width=50, height=10)
+answer.pack(padx=10, pady=10)
+
+
+
+window.mainloop()
