@@ -17,7 +17,9 @@ def sarcasm(text):
 
 def on_click():
     input_text = text_box.get()
-    return input_text
+    output = sarcasm(input_text)
+    answer.delete(1.0, tk.END)  # Clear the text widget
+    answer.insert(tk.END, output)
 
 #GUI
 
@@ -37,11 +39,11 @@ text_box.config(width=50)
 text_box.pack(padx=20,pady=20,side="left")
 
 #Create a "generate" button
-generate_button = tk.Button(container, text="Generate Sarcasm", command=)
+generate_button = tk.Button(container, text="Generate Sarcasm", command=on_click)
 generate_button.pack(side="right",padx=10)  # Add padding to separate it from the entry
 
 answer = tk.Text(window, width=50, height=10)
-answer.pack(padx=10, pady=10)
+answer.pack(padx=10, pady=30)
 
 
 
