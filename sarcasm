@@ -25,25 +25,26 @@ def on_click():
 
 window = tk.Tk()
 window.title("Sarcasm Generator")
+window.geometry("500x400")
 
 title_label = tk.Label(window, text="Sarcasm Generator", font=("ComicSans",36))
 title_label.pack(padx=10,pady=10)
 
 #Create a container that will hold the entry widget and button
 container = tk.Frame(window)
-container.pack(padx=10, pady=20)
+container.pack(padx=20, pady=20, fill="both")
 
 #Add entry widget
 text_box = tk.Entry(container)
 text_box.config(width=50)
-text_box.pack(padx=20,pady=20,side="left")
+text_box.pack(pady=20,side="left", fill="x")
 
 #Create a "generate" button
 generate_button = tk.Button(container, text="Generate Sarcasm", command=on_click)
 generate_button.pack(side="right",padx=10)  # Add padding to separate it from the entry
 
-answer = tk.Text(window, width=50, height=10)
-answer.pack(padx=10, pady=30)
+answer = tk.Text(window, width=50, height=10, font=("Helvetica"))
+answer.pack(padx=20, pady=30)
 
 
 
