@@ -29,7 +29,7 @@ window.title("Sarcasm Generator")
 title_label = tk.Label(window, text="Sarcasm Generator", font=("ComicSans",36))
 title_label.pack(padx=10,pady=10)
 
-#Create a container that will hold the 
+#Create a container that will hold the entry widget and button
 container = tk.Frame(window)
 container.pack(padx=10, pady=20)
 
